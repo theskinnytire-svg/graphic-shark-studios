@@ -1,0 +1,42 @@
+{
+  "name": "graphic-shark-studios",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "tsr generate && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsr generate && tsc --noEmit",
+    "db:apply": "wrangler d1 execute graphic-shark-leads --remote --file=./migrations/0001_submissions.sql",
+    "db:leads": "wrangler d1 execute graphic-shark-leads --remote --command \"SELECT id, kind, name, business, email, phone, services, budget, message, created_at FROM submissions ORDER BY created_at DESC LIMIT 25\"",
+    "deploy": "bun run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.101.2",
+    "@tanstack/react-router": "^1.170.17",
+    "@tanstack/react-start": "^1.168.27",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260708.1",
+    "@tailwindcss/vite": "^4.3.2",
+    "@tanstack/router-cli": "^1.167.18",
+    "@types/node": "^26.1.0",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3",
+    "wrangler": "^4.148.0"
+  },
+  "overrides": {
+    "@types/react": "19.2.15"
+  }
+}

@@ -1,0 +1,25 @@
+/* Cascade layer order: reset lowest, then Tailwind base, then components, then
+ * utilities. */
+@layer reset, theme, base, components, utilities;
+
+@import "tailwindcss" source(none);
+@source "../src";
+
+/* Graphic Shark Studios. The site's own brand layer. Unlayered rules, so they
+ * win over the layered Tailwind base without fighting the cascade. */
+@import "./site.css";
+
+@theme {
+  --spacing: 0.25rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--gs-tarmac);
+    color-scheme: dark;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+}
