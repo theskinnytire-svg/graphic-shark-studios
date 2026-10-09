@@ -25,3 +25,4 @@ and quote and demo request forms that store leads in a Cloudflare database.
 
 Do not rewrite `src/components/scroll-scrub/`. That is the film engine. Fill in
 scene data, never the engine.
+Deployment configuration updated — October 8, 2026.
