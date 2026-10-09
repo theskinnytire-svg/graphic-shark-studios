@@ -242,6 +242,10 @@ body {
   transform: rotate(-45deg) translateY(-1px);
 }
 
+.site-nav__call {
+  display: none;
+}
+
 .site-sheet {
   position: fixed;
   z-index: 55;
@@ -1633,6 +1637,30 @@ body {
     display: grid;
   }
 
+  .site-nav__call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--gs-hair-strong);
+    color: var(--gs-paper);
+    font-family: var(--gs-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .site-nav__call img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  .site-nav__call:active {
+    transform: translateY(1px);
+  }
+
   .shell {
     width: calc(100% - 2rem);
   }
@@ -1676,5 +1704,12 @@ body {
 
   .field-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* On very narrow phones the wordmark gives way so the call button always fits. */
+@media (max-width: 420px) {
+  .site-nav__wordmark {
+    display: none;
   }
 }

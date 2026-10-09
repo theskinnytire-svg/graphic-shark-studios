@@ -160,6 +160,21 @@ export function SiteNav() {
           </nav>
 
           <div className="site-nav__actions">
+            {/* Phones only: let a visitor ring the studio in one tap. */}
+            <a
+              aria-label={`Call the studio on ${studio.phone}`}
+              className="site-nav__call"
+              href={studio.phoneHref}
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                height={16}
+                src="/assets/icons/icon-08.png"
+                width={16}
+              />
+              <span>{studio.phone}</span>
+            </a>
             <CtaNav />
             <button
               aria-expanded={open}
